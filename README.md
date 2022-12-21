@@ -1,4 +1,21 @@
-# Obsidian Sample Plugin
+# Obsidian Sample Plugin (Rust)
+
+This is a quick proof of concept combining the current [Obsidian Git template](https://github.com/obsidianmd/obsidian-sample-plugin) and an [earlier proof-of-concept](https://github.com/trashhalo/obsidian-rust-plugin). Thanks to @trashhalo who essentially did all the work!
+
+How to use:
+
+1. Create a new repo with this one as a template.
+2. Make sure Rust & cargo are installed (I used `rustup`).
+3. Install `wasm-pack` [link](https://rustwasm.github.io/wasm-pack/installer/).
+4. Follow the steps here to set up the sample plugin: [Obsidian plugin setup](https://marcus.se.net/obsidian-plugin-docs/getting-started/create-your-first-plugin), ideally using the `yarn` instructions (I haven't tested the npm version).
+
+Setting up yarn will install and run the `esbuild-plugin-wasm-pack` plugin, which compiles the Rust code (in `src/`) and puts the resulting packed WebAssembly into `pkg/` (NOTE: this generated folder will have a `.gitignore`, which you will need to remove to distribute your plugin). The `main.ts` file then loads that code.
+
+To test: try running the "Sample Plugin: Example Command" in the command bar (i.e. Cmd+P); you should see a "hello from rust" message.
+
+I'm leaving the original Obsidian plugin docs below in case it's helpful:
+
+# Obsidian Sample Plugin docs
 
 This is a sample plugin for Obsidian (https://obsidian.md).
 

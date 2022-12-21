@@ -38,17 +38,17 @@ $ node esbuild.config.mjs
    Compiling wasm-bindgen-macro-support v0.2.83
    Compiling wasm-bindgen-macro v0.2.83
    Compiling js-sys v0.3.60
-   Compiling obsidian-rust-plugin v0.1.0 (/Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo)
+   Compiling obsidian-rust-plugin v0.1.0 (<repo>)
     Finished release [optimized] target(s) in 13.54s
 node:internal/process/promises:246
           triggerUncaughtException(err, true /* fromPromise */);
           ^
 
-[Error: ENOENT: no such file or directory, open '/Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/target/wasm32-unknown-unknown/release/obsidian_rust_plugin.d'] {
+[Error: ENOENT: no such file or directory, open '<repo>/target/wasm32-unknown-unknown/release/obsidian_rust_plugin.d'] {
   errno: -2,
   code: 'ENOENT',
   syscall: 'open',
-  path: '/Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/target/wasm32-unknown-unknown/release/obsidian_rust_plugin.d'
+  path: '<repo>/target/wasm32-unknown-unknown/release/obsidian_rust_plugin.d'
 }
 
 Node.js v17.0.1
@@ -58,7 +58,7 @@ info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this comm
 [INFO]: Optimizing wasm binaries with `wasm-opt`...
 (prod) test_repo> [INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
 [INFO]: :-) Done in 13.94s
-[INFO]: :-) Your wasm pkg is ready to publish at /Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/pkg.
+[INFO]: :-) Your wasm pkg is ready to publish at <repo>/pkg.
 
 (prod) test_repo> yarn run dev
 yarn run v1.22.17
@@ -73,7 +73,7 @@ $ node esbuild.config.mjs
 [INFO]: Optimizing wasm binaries with `wasm-opt`...
 [INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
 [INFO]: :-) Done in 0.41s
-[INFO]: :-) Your wasm pkg is ready to publish at /Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/pkg.
+[INFO]: :-) Your wasm pkg is ready to publish at <repo>/pkg.
 
 ✅  Your crate was successfully compiled.
 

@@ -13,6 +13,73 @@ Setting up yarn will install and run the `esbuild-plugin-wasm-pack` plugin, whic
 
 To test: try running the "Sample Plugin: Example Command" in the command bar (i.e. Cmd+P); you should see a "hello from rust" message.
 
+Note: currently there is a bug (probably with esbuild-plugin-wasm-pack) where esbuild doesn't wait for output to be generated (I think); the solution for now is just to rerun it:
+
+```bash
+(prod) test_repo> yarn run dev
+yarn run v1.22.17
+$ node esbuild.config.mjs
+
+ℹ  Compiling your crate in <default> mode...
+
+[INFO]: Checking for the Wasm target...
+[INFO]: Compiling to Wasm...
+   Compiling proc-macro2 v1.0.49
+   Compiling quote v1.0.23
+   Compiling unicode-ident v1.0.6
+   Compiling syn v1.0.107
+   Compiling log v0.4.17
+   Compiling wasm-bindgen-shared v0.2.83
+   Compiling cfg-if v1.0.0
+   Compiling bumpalo v3.11.1
+   Compiling once_cell v1.16.0
+   Compiling wasm-bindgen v0.2.83
+   Compiling wasm-bindgen-backend v0.2.83
+   Compiling wasm-bindgen-macro-support v0.2.83
+   Compiling wasm-bindgen-macro v0.2.83
+   Compiling js-sys v0.3.60
+   Compiling obsidian-rust-plugin v0.1.0 (/Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo)
+    Finished release [optimized] target(s) in 13.54s
+node:internal/process/promises:246
+          triggerUncaughtException(err, true /* fromPromise */);
+          ^
+
+[Error: ENOENT: no such file or directory, open '/Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/target/wasm32-unknown-unknown/release/obsidian_rust_plugin.d'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/target/wasm32-unknown-unknown/release/obsidian_rust_plugin.d'
+}
+
+Node.js v17.0.1
+[INFO]: Installing wasm-bindgen...
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+[INFO]: Optimizing wasm binaries with `wasm-opt`...
+(prod) test_repo> [INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
+[INFO]: :-) Done in 13.94s
+[INFO]: :-) Your wasm pkg is ready to publish at /Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/pkg.
+
+(prod) test_repo> yarn run dev
+yarn run v1.22.17
+$ node esbuild.config.mjs
+
+ℹ  Compiling your crate in <default> mode...
+
+[INFO]: Checking for the Wasm target...
+[INFO]: Compiling to Wasm...
+    Finished release [optimized] target(s) in 0.06s
+[INFO]: Installing wasm-bindgen...
+[INFO]: Optimizing wasm binaries with `wasm-opt`...
+[INFO]: Optional fields missing from Cargo.toml: 'description', 'repository', and 'license'. These are not necessary, but recommended
+[INFO]: :-) Done in 0.41s
+[INFO]: :-) Your wasm pkg is ready to publish at /Users/rachit/Library/Mobile Documents/iCloud~md~obsidian/Documents/machine learning/.obsidian/plugins/test_repo/pkg.
+
+✅  Your crate was successfully compiled.
+
+[watch] build finished, watching for changes...
+```
+
 I'm leaving the original Obsidian plugin docs below in case it's helpful:
 
 # Obsidian Sample Plugin docs

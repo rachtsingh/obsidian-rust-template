@@ -74,6 +74,7 @@ esbuild.build({
     plugins: [
         wasmPlugin,
         wasmPack({
+            'target': 'web'
             // put wasm-pack plugin options
         }),
     ],
